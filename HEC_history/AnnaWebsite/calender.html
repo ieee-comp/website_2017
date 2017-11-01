@@ -1,0 +1,306 @@
+<!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
+<html>
+<head>
+</head>
+<body>
+
+
+<!--<center>-->
+
+
+<script language="javascript" type="text/javascript">
+var day_of_week = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+var month_of_year = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+//  DECLARE AND INITIALIZE VARIABLES
+var Calendar = new Date();
+
+var year = Calendar.getFullYear();     // Returns year
+var month = Calendar.getMonth();    // Returns month (0-11)
+var today = Calendar.getDate();    // Returns day (1-31)
+var weekday = Calendar.getDay();    // Returns day (1-31)
+
+var DAYS_OF_WEEK = 7;    // "constant" for number of days in a week
+var DAYS_OF_MONTH = 31;    // "constant" for number of days in a month
+var cal;    // Used for printing
+var cal1; 
+var cal2; 
+
+Calendar.setDate(1);    // Start the calendar day at '1'
+Calendar.setMonth(month);    // Start the calendar month at now
+//Calendar1.setDate(1);    // Start the calendar day at '1'
+//Calendar1.setMonth(month);    // Start the calendar month at now
+//Calendar2.setDate(1);    // Start the calendar day at '1'
+//Calendar2.setMonth(month);    // Start the calendar month at now
+
+/* VARIABLES FOR FORMATTING
+NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+      tags to customize your caledanr's look. */
+
+var TR_start = '<TR>';   //string
+var TR_end = '</TR>';
+var highlight_start = '<TD WIDTH="50"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=9FB1B2 BORDERCOLOR=CCCCCC><TR><TD WIDTH=50><B><CENTER>';  ///width of the calender and width of hl
+var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+
+var highlight_start2 = '<TD WIDTH="50"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=7FF36D BORDERCOLOR=CCCCCC><TR><TD WIDTH=50><CENTER>';  ///width of the calender and width of hl
+var highlight_end2   = '</CENTER></TD></TR></TABLE>';
+
+var highlight_start4 = '<TD WIDTH="50"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=F22623 BORDERCOLOR=CCCCCC><TR><TD WIDTH=50><CENTER>';  ///width of the calender and width of hl
+var highlight_end4   = '</CENTER></TD></TR></TABLE>';
+
+var TD_start = '<TD WIDTH="50"><CENTER>';
+var TD_end = '</CENTER></TD>';
+
+/* BEGIN CODE FOR CALENDAR    //////////////////////////////////////////////////////////////////////////////////////////////////////////////one 
+NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+tags to customize your calendar's look.*/
+
+cal =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';   ///bs  upper border
+cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5>' + TR_start;   ///cells. borders, padding area  of the individual table cells in the calendar 
+//cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#9FB1B2"><CENTER><B>';
+cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#CCCCCC"><CENTER><B>';  ///color of the header with month and 7 is its width
+cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+cal += TR_start;
+
+//   DO NOT EDIT BELOW THIS POINT  //
+
+// LOOPS FOR EACH DAY OF WEEK
+for(index=0; index < DAYS_OF_WEEK; index++)
+{
+
+// BOLD TODAY'S DAY OF WEEK
+if(weekday == index)
+cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+
+// PRINTS DAY
+else
+cal += TD_start + day_of_week[index] + TD_end;
+}
+
+cal += TD_end + TR_end;
+cal += TR_start;
+
+// FILL IN BLANK GAPS UNTIL TODAY'S DAY
+for(index=0; index < Calendar.getDay(); index++)
+cal += TD_start + '  ' + TD_end;
+
+// LOOPS FOR EACH DAY IN CALENDAR
+for(index=0; index < DAYS_OF_MONTH; index++)
+{
+if( Calendar.getDate() > index )
+{
+  // RETURNS THE NEXT DAY TO PRINT
+  week_day =Calendar.getDay();    //mon tue wed
+
+  // START NEW ROW FOR FIRST DAY OF WEEK
+  if(week_day == 0)                ///if today is sunday
+  cal += TR_start;					//start from the left borer
+
+  if(week_day != DAYS_OF_WEEK)      ///if the week day is not 7-- not hte right border , do whithing the table  //condition where to start drawing 
+  {
+
+  // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+  var day  = Calendar.getDate();
+
+  // HIGHLIGHT TODAY'S DATE
+  if( today==Calendar.getDate() )     //highlights only one, today
+  cal += highlight_start + day + highlight_end + TD_end;
+
+  // PRINTS DAY
+  else
+  cal += TD_start + day + TD_end;
+  }
+
+  // END ROW FOR LAST DAY OF WEEK
+  if(week_day == DAYS_OF_WEEK)    //if today is sat--the righ border, start new row 
+  cal += TR_end;
+  }
+
+  // INCREMENTS UNTIL END OF THE MONTH
+  Calendar.setDate(Calendar.getDate()+1); ///
+
+}// end for loop
+
+cal += '</TD></TR></TABLE></TABLE>';  ///finish the table.
+
+//  PRINT CALENDAR
+document.write(cal);
+//////////////////////////////////////////////////////////************************one month ahead*********************************************///////////////////////////////////////////////////////////
+/* BEGIN CODE FOR CALENDAR
+NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+tags to customize your calendar's look.*/
+Calendar.setDate(1); 
+cal1 =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
+cal1 += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5>' + TR_start;
+cal1 += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EE1065"><LEFT><B>';    //////////////month display
+cal1 += month_of_year[month+1]  + '   ' + year + '</B>' + TD_end + TR_end;
+cal1 += TR_start;
+
+//   DO NOT EDIT BELOW THIS POINT  //
+
+// LOOPS FOR EACH DAY OF WEEK
+for(index=0; index < DAYS_OF_WEEK; index++)
+{
+
+// BOLD TODAY'S DAY OF WEEK
+//if(weekday == index)
+//cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+
+// PRINTS DAY
+//else
+cal1 += TD_start + day_of_week[index] + TD_end;
+}
+
+cal1 += TD_end + TR_end;
+cal1 += TR_start;
+
+// FILL IN BLANK GAPS UNTIL TODAY'S DAY
+for(index=0; index < Calendar.getDay(); index++)   /////////////not needed
+cal1 += TD_start + '  ' + TD_end;
+
+// LOOPS FOR EACH DAY IN CALENDAR
+for(index=0; index < DAYS_OF_MONTH; index++)
+{
+if( Calendar.getDate() > index )
+{
+  // RETURNS THE NEXT DAY TO PRINT
+  week_day =Calendar.getDay();
+var day0  = Calendar.getDate();
+  // START NEW ROW FOR FIRST DAY OF WEEK
+  if(week_day == 0)
+  cal1 += TR_start;
+
+  if(week_day != DAYS_OF_WEEK)
+  {
+
+  switch (week_day) {
+  
+  case 2:
+  cal1+=highlight_start2 + day0 + highlight_end2 + TD_end;
+  break;
+   case 4:
+  
+ cal1+=highlight_start4 + day0 + highlight_end4 + TD_end;
+ break;
+ 
+  default:
+  cal1 += TD_start + day0 + TD_end; }
+  }
+
+  // END ROW FOR LAST DAY OF WEEK
+  if(week_day == DAYS_OF_WEEK)
+  cal1 += TR_end;
+  }
+
+  // INCREMENTS UNTIL END OF THE MONTH
+  Calendar.setDate(Calendar.getDate()+1);
+
+}// end for loop
+
+cal1 += '</TD></TR></TABLE></TABLE>';
+
+//  PRINT CALENDAR
+document.write(cal1);
+
+//  End -->
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* BEGIN CODE FOR CALENDAR
+NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+tags to customize your calendar's look.*/
+
+Calendar.setDate(1);    // Start the calendar day at '1'
+//Calendar.setMonth(month+1);    // Start the calendar month at now
+
+cal2 =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
+cal2 += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5>' + TR_start;
+cal2 += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#9FB1B2"><CENTER><B>';
+cal2 += month_of_year[month+2]  + '   ' + year + '</B>' + TD_end + TR_end;
+cal2 += TR_start;
+
+//   DO NOT EDIT BELOW THIS POINT  //
+
+// LOOPS FOR EACH DAY OF WEEK
+for(index=0; index < DAYS_OF_WEEK; index++)
+{
+
+// BOLD TODAY'S DAY OF WEEK
+//if(weekday == index)
+//cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+
+// PRINTS DAY
+//else
+cal2 += TD_start + day_of_week[index] + TD_end;
+}
+
+cal2 += TD_end + TR_end;
+cal2 += TR_start;
+
+// FILL IN BLANK GAPS UNTIL TODAY'S DAY
+//for(index=0; index < DAYS_OF_WEEK; index++)
+for(index=0; index < Calendar.getDay(); index++)   //?
+cal2 += TD_start + '  ' + TD_end;
+
+
+// LOOPS FOR EACH DAY IN CALENDAR
+for(index=0; index < DAYS_OF_MONTH; index++)
+{
+if( Calendar.getDate() > index )
+{
+  // RETURNS THE NEXT DAY TO PRINT
+  week_day =Calendar.getDay();
+  var day1  = Calendar.getDate();
+//if ((week_day)==2)
+//cal2 += highlight_start2 + day + highlight_end2 + TD_end;
+
+//if (week_day==4)
+//cal2 += highlight_start4 + day + highlight_end4 + TD_end;
+  // START NEW ROW FOR FIRST DAY OF WEEK
+  if(week_day == 0)
+  cal2 += TR_start;
+  
+
+
+
+  if(week_day != DAYS_OF_WEEK)
+  {
+
+  // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+  //var day  = Calendar.getDate();
+  switch (week_day) {
+  
+  case 2:
+  cal2+=highlight_start2 + day1 + highlight_end2 + TD_end;
+  break;
+   case 4:
+  
+ cal2+=highlight_start4 + day1 + highlight_end4 + TD_end;
+ break;
+ 
+  default:
+  cal2 += TD_start + day1 + TD_end; }
+  }
+
+  // END ROW FOR LAST DAY OF WEEK
+  if(week_day == DAYS_OF_WEEK)
+  cal2 += TR_end;
+  }
+
+  // INCREMENTS UNTIL END OF THE MONTH
+  Calendar.setDate(Calendar.getDate()+1);
+
+}// end for loop
+
+cal2 += '</TD></TR></TABLE></TABLE>';
+
+//  PRINT CALENDAR
+document.write(cal2);
+
+//  End -->
+
+//  End -->
+</script>
+<!--</center> -->
+
+</body>
+</html>

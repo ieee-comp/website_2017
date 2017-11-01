@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HEC</title>
+<meta name="description" content=" ryerson hobby electronics club">
+<meta name="keywords" content="ryerson, hec, leshchenko">
+<link href="css/styleTut.css" rel="stylesheet" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script> 
+$(document).ready(function(){
+   $("#btn1").click(function(){
+    /*var m=$(this);*/
+    $(".panel1").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+   $("#btn2").click(function(){
+    /*var m=$(this);*/
+    $(".panel2").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+   $("#btn3").click(function(){
+    /*var m=$(this);*/
+    $(".panel3").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+   $("#btn4").click(function(){
+    /*var m=$(this);*/
+    $(".panel4").slideToggle("slow");
+  });
+});
+$(document).ready(function(){
+   $("#btn5").click(function(){
+    /*var m=$(this);*/
+    $(".panel5").slideToggle("slow");
+  });
+});
+$(document).ready(function(){
+   $("#btn6").click(function(){
+    /*var m=$(this);*/
+    $(".panel6").slideToggle("slow");
+  });
+});
+$(document).ready(function(){
+   $("#btn7").click(function(){
+    /*var m=$(this);*/
+    $(".panel7").slideToggle("slow");
+  });
+});
+$(document).ready(function(){
+   $("#btn8").click(function(){
+    /*var m=$(this);*/
+    $(".panel8").slideToggle("slow");
+  });
+});
+$(document).ready(function(){
+   $("#btn9").click(function(){
+    /*var m=$(this);*/
+    $(".panel9").slideToggle("slow");
+  });
+});
+</script>
+ 
+
+ 
+<style> 
+
+#btn1, #btn2,#btn3,#btn4,#btn5,#btn6, #btn7, #btn8, #btn9
+{
+color:#0a0800;
+font-size:10px;
+padding:0px 10px 0px 10px;
+text-align:left;
+display:inline-block;
+background-color:#97aaae;
+border:solid 1px #c3c3c3;
+}
+
+#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover, #btn8:hover, #btn9:hover{
+	text-decoration:underline;
+}
+
+.panel1,  .panel2, .panel3, .panel4, .panel5, .panel6, .panel7, .panel8, .panel9
+
+{
+padding:5px;
+text-align:left;
+background-color:#e5eecc;
+border:#566568 solid 1px;
+padding:20px;
+display:none;
+color: black;
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>HEC</h1>
+      <p>Tutorials and Practice Sessions</p>
+    </div>
+
+   <div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Schedule.html">Schedule</a></li>
+        <li><a href="Tutorials_and_Sessions.html">Tutorials and Sessions</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Contacts.html">Contacts</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="page_content"> 
+
+
+
+    <div class="right_section">
+      <div class="common_content">
+        <h3>Tutorials Fall 2014</h3>
+        <hr>
+		 <ul>
+		 	<style>
+			
+			h4 {color: #81c266;}
+			</style>
+		  <h4  ><a name="tutorial1"> September 23: Fast tracking through Arduino</a></h4>
+          <li> The objective of the Fall2014 semester long project and schedule will be outlined. 
+		  The objective is to design and build the motor driver board from scratch and learn to control motors with it. 
+		  This tutorial is designed to give you the idea what the final result should be. You will be given Arduino board 
+		  and off the shelf Motor Shield for it and asked to put all components together to make motor spin. Example codes will be provided. 
+		  You will be explained basic principles of hardware operation, software side of Ardiono IDE. 
+		  Concepts of interrupts will be explained as well and now you will be asked to write a simple 
+		  Arduino program with interrupts and try it on the board. Download <a href="http://arduino.cc/en/Main/Software" target="_blank"> Arduino IDE </a> </li> 
+		  
+		   
+
+			<div id="btn1"> <p> continue reading<p>  </div>
+			<div  class="panel1"><p>We went over Arduino IDE, definitions of PWM and tried to control motors with off-the-shelf drive board. Basic Ardiono functions were used like digitalWrite(x,x); and analogWrite(x,x); <p></div>
+
+		  
+		<!--  <p><a href="#" class="btn">continue reading</a></p> <div class="panel"><p>nothing here yet<p></div>-->
+          
+<br>
+<br>
+		  
+		  <h4 ><a name="tutorial2"> September 30: Motor Types and Control Concepts</a></h4>
+          <li>Finishing writing program with Interrupts if you didn’t do so on the previous tutorial. Concepts of motor operation. 
+		  Types of motors and methods of control will be discussed. You will be given H-bridge on IC, Arduino so you will be able to write the program to spin the motor. 
+		  You can put motors on chassis and make it run.</li> 
+		  
+		  <div id="btn2">continue reading</div>
+		<div class="panel2"><p>we discussed the H-bridge operation principles and its applications<p></div>
+<br>  
+<br>  
+		  <h4 ><a name="tutorial3"> October 7: Motor Driver Circuit</a></h4>
+          <li>We will be looking into general schematics of an H-bridge based on BJTs and MOSFETs. 
+		  Before proceeding with building it we will look at transistor operation principles, solve couple of problems and assemble the circuit to 
+		  drive LED with MOSFET operating as a switch.  </li> 
+		  
+			<div id="btn3"> <p> continue reading<p>  </div>
+			<div  class="panel3"><p>nothing here yet<p></div>
+
+<br>  
+<br>
+		  <h4 ><a name="tutorial4" > October 14: BJT, MOSFET, OP Amp Circuits </a></h4>  
+          <li>We will be looking into general schematics of an H-bridge based on BJTs and MOSFETs. Before proceeding with building it we will look at transistor operation principles, solve couple of problems and assemble the circuit to drive LED with MOSFET operating as a switch.   </li> 
+		  <div id="btn4"> <p> continue reading<p>  </div>
+			<div  class="panel4"><p>nothing here yet<p></div>
+<br>
+<br>
+		  <h4 ><a name="tutorial5">October 21: Design Final Motor Driver Circuit</a></h4>  
+          <li>You will design and assemble your H-bridge with protection and charge pump on breadboard, as well test it with Arduino. </li>
+		  <div id="btn5"> <p> continue reading<p>  </div>
+		  <div  class="panel5"><p>nothing here yet<p></div>
+<br> 
+<br>
+		  <h4 ><a name="tutorial6"> October 28: Layout in Eagle Cad </a> </h4>  
+          <li>Before coming to the session download <a href="http://www.cadsoftusa.com/download-eagle/?language=en" target="_blank">Eagle Cad</a> on your computers. 
+		  You will be making schematic of your board together in Eagle Cad and placing components on the PCB.  </li> 
+		  	<div id="btn6"> <p> continue reading<p>  </div>
+			<div  class="panel6"><p>nothing here yet<p></div>
+<br> 
+<br>
+		 <h4 ><a name="tutorial7">November 4: Prototyping Techniques</a></h4>  
+          <li>The modern PCB design will be discussed: why electromagnetism matters. You will solder or wire wrap your layout. </li> 
+		  		  	<div id="btn7"> <p> continue reading<p>  </div>
+			<div  class="panel7"><p>nothing here yet<p></div>
+<br> 
+		 <br> 
+		 
+		 		  <h4 ><a name="tutorial9">November 18: General Academics </a></h4>  
+          <li>I will be answering any questions up to my knowledge and abilities on current academic curriculum: 
+		  Signals I, DSP, Circuits, Power Electronics, Digital Logic, Electromagnetics and so on. </li>
+		  		  	<div id="btn9"> <p> continue reading<p>  </div>
+			<div  class="panel9"><p>nothing here yet<p></div>
+<br> 
+		            <br> 
+		<h4 ><a name="tutorial8">November 25: Intro to ARM CPU and KDS </a></h4>  
+          <li>Introduction to ARM architecture and IDE for it. We will discuss the components needed for programming any chip of any architecture. 
+		  We will look into the Winter2015 semester and schedule. We are also having Derrick Klotz from Freescale 
+		  Semiconductors to talk about your engineering future. You don’t have to download it now if you don’t want but the <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=KDS_IDE " target="_blank">Kinetis Design Studio </a>
+		  (IDE for ARM Freescale MCU) will be used next semester  </li>		  	
+		  <div id="btn8"> <p> continue reading<p>  </div>
+			<div  class="panel8"><p>nothing here yet<p></div>
+<br> 
+		  <br>
+
+</ul>					
+		
+		
+        </div>
+  
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://aleshchenko.blog.ryerson.ca/" target="_self"> Me </a><br>
+    
+    <!--DO NOT remove footer link-->
+	
+    <!--/. end footer from here-->
+  </div>
+</div>
+
+</body></html>
